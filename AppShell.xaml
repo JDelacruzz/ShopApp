@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ShopApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShopApp"
+    xmlns:views="clr-namespace:ShopApp.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="ShopApp">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:AboutPage}"
+        Route="AboutPage" />
+
+    <FlyoutItem Title="Configuration">
+
+        <Tab Title="Resumen">
+            <ShellContent
+                Title="Dara System"
+                ContentTemplate="{DataTemplate views:MainPage}"
+                Route="MainPage"/>
+        </Tab>
+
+        <Tab Title="Productos">
+            <ShellContent
+                Title="Products"
+                ContentTemplate="{DataTemplate views:ProductsPage}"
+                Route="ProductsPage"/>
+        </Tab>
+    </FlyoutItem>
+
+</Shell>

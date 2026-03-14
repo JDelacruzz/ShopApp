@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.MainPage"
+             BackgroundColor="#0A0E1A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- ===== HEADER ===== -->
+            <Border BackgroundColor="#151B2E"
+                    StrokeShape="RoundRectangle 20"
+                    Stroke="#2A3A5C"
+                    StrokeThickness="1"
+                    Padding="20,16">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="🛍️ SHOP APP"
+                           FontSize="26"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="White"
+                           CharacterSpacing="3"/>
+                    <Label Text="Panel de Consultas"
+                           FontSize="12"
+                           HorizontalOptions="Center"
+                           TextColor="#6B7FB5"
+                           CharacterSpacing="1"/>
+                    <BoxView HeightRequest="2"
+                             Margin="40,8,40,0"
+                             Color="#3D5AFE"
+                             CornerRadius="2"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ===== BADGES ===== -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="12">
+                <Border BackgroundColor="#1E2A45"
+                        StrokeShape="RoundRectangle 20"
+                        Stroke="#3D5AFE"
+                        Padding="16,8">
+                    <Label Text="💻 3 Computadoras"
+                           TextColor="#3D5AFE"
+                           FontSize="12"
+                           FontAttributes="Bold"/>
+                </Border>
+                <Border BackgroundColor="#1E2A45"
+                        StrokeShape="RoundRectangle 20"
+                        Stroke="#00C896"
+                        Padding="16,8">
+                    <Label Text="💰 Top Precio"
+                           TextColor="#00C896"
+                           FontSize="12"
+                           FontAttributes="Bold"/>
+                </Border>
+            </HorizontalStackLayout>
+
+            <!-- ===== TARJETA 1: COMPUTADORAS ===== -->
+            <Border StrokeShape="RoundRectangle 16"
+                    Stroke="#3D5AFE"
+                    StrokeThickness="1"
+                    BackgroundColor="#151B2E"
+                    Padding="0">
+                <VerticalStackLayout>
+                    <Border BackgroundColor="#3D5AFE"
+                            StrokeShape="RoundRectangle 16,16,0,0"
+                            Padding="16,12">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="💻"
+                                   FontSize="20"
+                                   VerticalOptions="Center"/>
+                            <VerticalStackLayout>
+                                <Label Text="Categoría: Computadoras"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="White"/>
+                                <Label Text="Todos los productos disponibles"
+                                       FontSize="11"
+                                       TextColor="#C5D0FF"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Border>
+                    <VerticalStackLayout Padding="16,12" Spacing="6">
+                        <Label x:Name="lblComputadoras"
+                               FontSize="14"
+                               TextColor="White"
+                               LineBreakMode="WordWrap"
+                               LineHeight="1.5"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ===== TARJETA 2: PRECIO > 1000 ===== -->
+            <Border StrokeShape="RoundRectangle 16"
+                    Stroke="#00C896"
+                    StrokeThickness="1"
+                    BackgroundColor="#151B2E"
+                    Padding="0">
+                <VerticalStackLayout>
+                    <Border BackgroundColor="#00A87A"
+                            StrokeShape="RoundRectangle 16,16,0,0"
+                            Padding="16,12">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="💰"
+                                   FontSize="20"
+                                   VerticalOptions="Center"/>
+                            <VerticalStackLayout>
+                                <Label Text="Precio Mayor a $1,000"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="White"/>
+                                <Label Text="Productos premium del catálogo"
+                                       FontSize="11"
+                                       TextColor="#B2F0DC"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Border>
+                    <VerticalStackLayout Padding="16,12" Spacing="6">
+                        <Label x:Name="lblMayor1000"
+                               FontSize="14"
+                               TextColor="White"
+                               LineBreakMode="WordWrap"
+                               LineHeight="1.5"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ===== TARJETA 3: CATEGORÍA MÁS CARA ===== -->
+            <Border StrokeShape="RoundRectangle 16"
+                    Stroke="#FFB830"
+                    StrokeThickness="1"
+                    BackgroundColor="#151B2E"
+                    Padding="0">
+                <VerticalStackLayout>
+                    <Border BackgroundColor="#E09B00"
+                            StrokeShape="RoundRectangle 16,16,0,0"
+                            Padding="16,12">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="🏆"
+                                   FontSize="20"
+                                   VerticalOptions="Center"/>
+                            <VerticalStackLayout>
+                                <Label Text="Categoría Más Cara"
+                                       FontSize="15"
+                                       FontAttributes="Bold"
+                                       TextColor="White"/>
+                                <Label Text="Basado en el producto de mayor precio"
+                                       FontSize="11"
+                                       TextColor="#FFF0C0"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </Border>
+                    <VerticalStackLayout Padding="16,20" Spacing="4">
+                        <Label x:Name="lblCategoriaCara"
+                               FontSize="28"
+                               FontAttributes="Bold"
+                               TextColor="#FFB830"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="★ Mayor valor del catálogo"
+                               FontSize="12"
+                               TextColor="#6B7FB5"
+                               HorizontalOptions="Center"/>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- ===== FOOTER ===== -->
+            <Label Text="ShopApp © 2026"
+                   FontSize="11"
+                   TextColor="#3A4A6B"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,10"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
