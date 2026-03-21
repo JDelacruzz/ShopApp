@@ -3,10 +3,22 @@
     x:Class="ShopApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ShopApp"
     xmlns:views="clr-namespace:ShopApp.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="ShopApp">
+
+    <Shell.FlyoutHeader>
+        <Image Source="dotnet_bot.png" WidthRequest="128" Margin="18">
+
+        </Image>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <VerticalStackLayout Padding="10">
+            <Label Text="{Binding AppName}" FontAttributes="Bold" />
+            <Label Text="{Binding AppVersion}" FontSize="12" />
+        </VerticalStackLayout>
+    </Shell.FlyoutFooter>
 
     <ShellContent
         Title="Home"
@@ -22,9 +34,9 @@
 
         <Tab Title="Resumen">
             <ShellContent
-                Title="Dara System"
+                Title="Data System"
                 ContentTemplate="{DataTemplate views:MainPage}"
-                Route="MainPage"/>
+                Route="MainPageTab"/>
         </Tab>
 
         <Tab Title="Productos">
@@ -36,17 +48,23 @@
 
         <Tab Title="Clientes">
             <ShellContent
-                Title="Products"
-                ContentTemplate="{DataTemplate views:ProductsPage}"
-                Route="ProductsPage"/>
+                Title="Clientes"
+                ContentTemplate="{DataTemplate views:ClientsPage}"
+                Route="ClientsPage"/>
         </Tab>
 
         <Tab Title="Categorias">
             <ShellContent
                 Title="Categorias"
-                ContentTemplate="{DataTemplate views:ProductsPage}"
-                Route="ProductsPage"/>
+                ContentTemplate="{DataTemplate views:CategoriesPage}"
+                Route="CategoriesPage"/>
         </Tab>
+
     </FlyoutItem>
+
+    <MenuItem
+        Text="Abrir repo"
+        Clicked="MenuItem_Clicked"
+        />
 
 </Shell>

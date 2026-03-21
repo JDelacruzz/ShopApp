@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:handlers="clr-namespace:ShopApp.Handlers"
              x:Class="ShopApp.Views.ProductsPage"
-             Title="ProductsPage">
-    <VerticalStackLayout x:Name="Container">
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Productos">
+
+    <Shell.SearchHandler>
+        <handlers:ProductoBusquedaHandler
+            Placeholder="Buscar producto"
+            DisplayMemberName="Nombre"
+            ShowsResults="True"/>
+    </Shell.SearchHandler>
+
+    <ScrollView>
+        <VerticalStackLayout x:Name="container" Padding="16" Spacing="8"/>
+    </ScrollView>
+
 </ContentPage>

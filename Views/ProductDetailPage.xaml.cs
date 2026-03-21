@@ -1,14 +1,13 @@
 using ShopApp.DataAcces;
-using System.ComponentModel;
 
 namespace ShopApp.Views;
 
-public partial class ProductDetailPage : ContentView, IQueryAttributable
+public partial class ProductDetailPage : ContentPage, IQueryAttributable
 {
-	public ProductDetailPage()
-	{
-		InitializeComponent();
-	}
+    public ProductDetailPage()
+    {
+        InitializeComponent();
+    }
 
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {

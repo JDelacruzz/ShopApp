@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ShopApp.DataAcces;
+using ShopApp.Views;
 
 namespace ShopApp
 {
