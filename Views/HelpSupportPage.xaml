@@ -5,17 +5,21 @@
              xmlns:views="clr-namespace:ShopApp.Views"
              Title="HelpSupportPage">
 
-    <ContentPage.Resources>
-        <views:HelpSupportData x:Key="data" VisitasPendientes="5"/>
-    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <views:HelpSupportData/>
+    </ContentPage.BindingContext>
 
-    <VerticalStackLayout>
+    <Grid RowDefinitions="Auto,*">
         <Label
-            Text="{Binding Source={StaticResource data},
-            Path=VisitasPendientes,
-            Mode=OneWay}"/>
+            Text="{Binding Clients.Count, Mode=OneWay}"
+            FontSize="30"
+            />
 
-        <Button Text="Actualizar" Clicked="Button_Clicked"/>
-    </VerticalStackLayout>
+        <CollectionView
+            Grid.Row="1"
+            SelectionMode="Single"
+            SelectedItem="{Binding ClienteSeleccionado, Mode=TwoWay}"
+            ItemsSource="{Binding Clients, Mode=OneWay}"/>
+    </Grid>
 
 </ContentPage>
