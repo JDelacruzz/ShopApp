@@ -3,20 +3,20 @@
     x:Class="ShopApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ShopApp"
     xmlns:views="clr-namespace:ShopApp.Views"
+    xmlns:info="clr-namespace:Microsoft.Maui.ApplicationModel;assembly=Microsoft.Maui.Essentials"
     Shell.FlyoutBehavior="Flyout"
     Title="ShopApp">
 
     <Shell.FlyoutHeader>
-        <Image Source="dotnet_bot.png" WidthRequest="128" Margin="18">
-
-        </Image>
+        <Image Source="dotnet_bot.png" WidthRequest="128" Margin="18"></Image>
     </Shell.FlyoutHeader>
 
     <Shell.FlyoutFooter>
         <VerticalStackLayout Padding="10">
-            <Label Text="{Binding AppName}" FontAttributes="Bold" />
-            <Label Text="{Binding AppVersion}" FontSize="12" />
+            <Label Text="{x:Static info:AppInfo.Name}"/>
+            <Label Text="{x:Static info:AppInfo.VersionString}"/>
         </VerticalStackLayout>
     </Shell.FlyoutFooter>
 
@@ -26,45 +26,27 @@
         Route="MainPage" />
 
     <ShellContent
-        Title="About"
-        ContentTemplate="{DataTemplate views:AboutPage}"
-        Route="AboutPage" />
+        Title="Products Page"
+        ContentTemplate="{DataTemplate views:ProductsPage}"
+        Route="ProductsPage" />
 
-    <FlyoutItem Title="Configuration">
+    <ShellContent
+        Title="Clients page"
+        ContentTemplate="{DataTemplate views:ClientsPage}"
+        Route="ClientsPage" />
 
-        <Tab Title="Resumen">
-            <ShellContent
-                Title="Data System"
-                ContentTemplate="{DataTemplate views:MainPage}"
-                Route="MainPageTab"/>
-        </Tab>
+    <ShellContent
+        Title="Categories page"
+        ContentTemplate="{DataTemplate views:CategoriesPage}"
+        Route="CategoriesPage" />
 
-        <Tab Title="Productos">
-            <ShellContent
-                Title="Products"
-                ContentTemplate="{DataTemplate views:ProductsPage}"
-                Route="ProductsPage"/>
-        </Tab>
-
-        <Tab Title="Clientes">
-            <ShellContent
-                Title="Clientes"
-                ContentTemplate="{DataTemplate views:ClientsPage}"
-                Route="ClientsPage"/>
-        </Tab>
-
-        <Tab Title="Categorias">
-            <ShellContent
-                Title="Categorias"
-                ContentTemplate="{DataTemplate views:CategoriesPage}"
-                Route="CategoriesPage"/>
-        </Tab>
-
-    </FlyoutItem>
+    <ShellContent
+        Title="Help Support"
+        ContentTemplate="{DataTemplate views:HelpSupportPage}"
+        Route="HelpSupportPage" />
 
     <MenuItem
         Text="Abrir repo"
         Clicked="MenuItem_Clicked"
         />
-
 </Shell>

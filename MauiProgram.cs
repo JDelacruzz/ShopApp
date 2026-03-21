@@ -24,6 +24,7 @@ namespace ShopApp
 
 
             Routing.RegisterRoute(nameof(ProductDetailPage), typeof(ProductDetailPage));
+            Routing.RegisterRoute(nameof(HelpSupportDetailPage), typeof(HelpSupportDetailPage));
             builder.Services.AddSingleton<ShopDbContext>();
 
 
