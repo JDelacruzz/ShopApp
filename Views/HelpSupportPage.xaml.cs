@@ -1,5 +1,6 @@
 using System.ComponentModel;
 
+
 namespace ShopApp.Views;
 
 public partial class HelpSupportPage : ContentPage
@@ -16,7 +17,7 @@ public partial class HelpSupportPage : ContentPage
     }
 }
 
-public class HelpSupportData : INotifyPropertyChanged
+public class HelpSupportData : BindingUtilObject
 {
     private int _visitasPendientes;
 
@@ -26,7 +27,7 @@ public class HelpSupportData : INotifyPropertyChanged
         set
         {
             _visitasPendientes = value;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(VisitasPendientes)));
+            RaisePropertyChanged();
         }
     }
 
