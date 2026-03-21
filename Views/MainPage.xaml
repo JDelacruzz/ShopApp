@@ -11,7 +11,7 @@
             <Border BackgroundColor="#151B2E"
                     StrokeShape="RoundRectangle 20"
                     Stroke="#2A3A5C"
-                    StrokeThickness="1"
+                    StrokeThickness="1" 
                     Padding="20,16">
                 <VerticalStackLayout Spacing="4">
                     <Label Text="🛍️ SHOP APP"

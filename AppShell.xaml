@@ -14,7 +14,7 @@
         Route="MainPage" />
 
     <ShellContent
-        Title="Home"
+        Title="About"
         ContentTemplate="{DataTemplate views:AboutPage}"
         Route="AboutPage" />
 
@@ -30,6 +30,20 @@
         <Tab Title="Productos">
             <ShellContent
                 Title="Products"
+                ContentTemplate="{DataTemplate views:ProductsPage}"
+                Route="ProductsPage"/>
+        </Tab>
+
+        <Tab Title="Clientes">
+            <ShellContent
+                Title="Products"
+                ContentTemplate="{DataTemplate views:ProductsPage}"
+                Route="ProductsPage"/>
+        </Tab>
+
+        <Tab Title="Categorias">
+            <ShellContent
+                Title="Categorias"
                 ContentTemplate="{DataTemplate views:ProductsPage}"
                 Route="ProductsPage"/>
         </Tab>

@@ -22,6 +22,7 @@ namespace ShopApp
             dbContext.Dispose();
 
 
+            Routing.RegisterRoute(nameof(ProductDetailPage), typeof(ProductDetailPage));
             builder.Services.AddSingleton<ShopDbContext>();
 
 
