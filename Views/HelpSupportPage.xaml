@@ -10,16 +10,27 @@
     </ContentPage.BindingContext>
 
     <Grid RowDefinitions="Auto,*">
-        <Label
-            Text="{Binding Clients.Count, Mode=OneWay}"
-            FontSize="30"
-            />
+
+        <Label Text="{Binding Clients.Count, Mode=OneWay}"
+               FontSize="30"/>
 
         <CollectionView
             Grid.Row="1"
             SelectionMode="Single"
             SelectedItem="{Binding ClienteSeleccionado, Mode=TwoWay}"
-            ItemsSource="{Binding Clients, Mode=OneWay}"/>
+            ItemsSource="{Binding Clients, Mode=OneWay}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout Padding="10">
+                        <Label Text="{Binding Nombre}" FontSize="18" FontAttributes="Bold"/>
+                        <Label Text="{Binding Direccion}" FontSize="14"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
     </Grid>
 
 </ContentPage>

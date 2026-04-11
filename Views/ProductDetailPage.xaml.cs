@@ -15,8 +15,6 @@ public partial class ProductDetailPage : ContentPage, IQueryAttributable
         var id = int.Parse(query["id"].ToString());
         var producto = dbContext.Products.First(x => x.Id == id);
 
-        container.Children.Add(new Label { Text = producto.Nombre });
-        container.Children.Add(new Label { Text = producto.Descripcion });
-        container.Children.Add(new Label { Text = producto.Precio.ToString() });
+        BindingContext = producto;
     }
 }

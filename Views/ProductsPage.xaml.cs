@@ -23,4 +23,9 @@ public partial class ProductsPage : ContentPage
             container.Children.Add(boton);
         }
     }
+    public record Product(int Id, string Nombre, string Descripcion, decimal Precio, int CategoryId, string ImageUrl)
+    {
+        public Category Category { get; set; }
+
+    }
 }

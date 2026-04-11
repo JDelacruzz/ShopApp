@@ -5,7 +5,20 @@
              Title="Detalle del Producto">
 
     <ScrollView>
-        <VerticalStackLayout x:Name="container" Padding="16" Spacing="10"/>
+        <VerticalStackLayout x:Name="container" Padding="16" Spacing="12">
+
+            <Image Source="{Binding ImagenUrl}"
+                   HeightRequest="250"
+                   Aspect="AspectFit"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="{Binding Nombre}"/>
+
+            <Label Text="{Binding Descripcion}"/>
+
+            <Label Text="{Binding Precio, StringFormat='Precio: {0:C}'}"/>
+
+        </VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
